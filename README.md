@@ -1,12 +1,14 @@
-### 💻  Aprendizado de Máquina Supervisionado
 # Projeto: Análise de Dados e Machine Learning (Python / Orange)
 
-> **Trabalho realizado pelos alunos:** Até 4 alunos  
-> **Ferramentas sugeridas:** Python (Pandas, Matplotlib, Seaborn, Scikit-Learn) ou Orange Data Mining 
+> **Trabalho realizado pelos alunos:**
+> * Clara
+> * Flávia
+> * Neto
+> * Bruno
+> * Leonardo
+>
+> **Ferramentas sugeridas:** Python (Pandas, Matplotlib, Seaborn, Scikit-Learn) ou Orange Data Mining  
 
-<div style="display: inline-block; background-color: white; padding: 60px; border-radius: 80px;">
-  <img align="center" alt="Python" height="250" width="550" src="https://www.databricks.com/sites/default/files/inline-images/Unsupervised-Learning-Diagram.png">  
-</div>
 ---
 
 ## 0º Contextualizar o DataSet
