@@ -25,15 +25,13 @@ NOMEMODELO = "titanic-modelo.pickle"
 
 
 def carregarDados(nomeArquivo):
-
     dados = None
     try:
         dados = pd.read_csv(nomeArquivo, sep=",")
-
     except:
         print("Não foi possivel carregar os dados")
-
     return dados
+
 
 
 def prepararDados(dados):

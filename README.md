@@ -1,11 +1,11 @@
 # Projeto: Análise de Dados e Machine Learning (Python / Orange)
 
 > **Trabalho realizado pelos alunos:**
-> * Clara
-> * Flávia
-> * Neto
-> * Bruno
-> * Leonardo
+> * Clara Freitas
+> * Flávia Rosa
+> * Itagiba Neto 
+> * Bruno Presley
+> * Leonardo Castro
 >
 > **Ferramentas sugeridas:** Python (Pandas, Matplotlib, Seaborn, Scikit-Learn) ou Orange Data Mining  
 
