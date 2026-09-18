@@ -6,23 +6,29 @@
 > * Itagiba Neto 
 > * Bruno Presley
 > * Leonardo Castro
->
-> **Ferramentas sugeridas:** Python (Pandas, Matplotlib, Seaborn, Scikit-Learn) ou Orange Data Mining  
+> 
+  **Bibliotecas** (Pandas, Matplotlib, Seaborn, Scikit-Learn)
+> **Ferramentas sugeridas:** VS Code, Python, Orange Data Mining
 
 ---
 
 ## 0º Contextualizar o DataSet
 * **Objetivo do Dataset:** 
-  * [Descrever aqui o problema de negócio ou o propósito analítico do conjunto de dados]
+  * [Descrever a contextualização do nosso trabalho com descrição sobre o Censo Escolar e sobre a prova do Ibeb, descrever também sobre o nosso objetivos do trabalho
+  links para leitura e entendimento do negócio [Sobre o Censo Escolar](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar)]
+  [Sobre o Ibeb](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb)
+
 * **Dicionário de Dados (Detalhamento das Colunas):**
- <!--  * `[Nome_Coluna_1]`: [Descrição do tipo de dado, significado e unidade de medida]
-  * `[Nome_Coluna_2]`: [Descrição do tipo de dado, significado e unidade de medida]
-  * `[Coluna_Alvo / Target]`: [Variável que será prevista ou analisada]-->
+  *[Ver como colocar um link para direcionar para o dicionário de dados]
 ---
 
-## 1º Carregar o Dataset
+## 1º Sobre os Datasets
+* **Dados compactados**
+  *Nesse projeto trabalhamos com dois datasets que estão compactados
+  `IBED_Escolas_Ensino_medio_2025.zip` são os dados das escolas de ensino médio e suas respectivas notas no Ideb.
+  `Tabela_Escola_2025_INEP.zip` são dados das escolas apartit do Censo Escolar realizado pelo INEP.
 * **Importação dos Dados:** 
-  * Realizar a leitura do arquivo `.csv` que está no projeto na pasta `1_DataSet` o arquivo está como `.zip` utilizando bibliotecas adequadas (ex: `pd.read_csv()` no Pandas).
+  * Realizar a leitura dos arquivos `.csv` que estão compactados`.zip` utilizando bibliotecas adequadas (ex: `pd.read_csv()` e zipfile.ZipFile).
 * **Inspeção Inicial:**
   * Verificação das primeiras e últimas linhas (`head()` / `tail()`).
   * Análise preliminar de dimensões (linhas e colunas) e tipos de dados estruturais (`info()`).
