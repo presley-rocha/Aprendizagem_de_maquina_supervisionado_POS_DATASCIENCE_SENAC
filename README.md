@@ -16,12 +16,14 @@
 * **Objetivo do Dataset:** 
   * ----- Descrever a contextualização do nosso trabalho com descrição sobre o Censo Escolar e sobre a prova do Ibeb, descrever também sobre o nosso objetivos do trabalho ------
 
-  links para leitura e entendimento do negócio [Sobre o Censo Escolar](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar)
-  [Sobre o Ibeb](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb)
+  links para leitura e entendimento do negócio 
+  *[Censo Escolar](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar)
+  
+  *[Avaliação do Ibeb](https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb)
 
 * **Dicionário de Dados (Detalhamento das Colunas):**
   * Para entendimento das variáveis do Dataset sobre o Censo Escolar use o Dicionário de dados em anexo ao projeto.
-  *[01.Endendimento_dos_dados.md](https://github.com/presley-rocha/Aprendizagem_de_maquina_supervisionado_POS_DATASCIENCE_SENAC/blob/main/2_NoteBooks_Etapas_Projeto/01.Entendimento_dos_dados.md)
+  * [01.Endendimento_dos_dados.md](https://github.com/presley-rocha/Aprendizagem_de_maquina_supervisionado_POS_DATASCIENCE_SENAC/blob/main/2_NoteBooks_Etapas_Projeto/01.Entendimento_dos_dados.md)
 ---
 
 ## 1º Sobre os Datasets
