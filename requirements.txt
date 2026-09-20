@@ -1,0 +1,25 @@
+# ============================================================
+# Projeto: Análise de Dados e Machine Learning
+# Previsão do IDEB com dados do Censo Escolar (INEP)
+# Pós-Graduação Data Science — SENAC DF
+# ============================================================
+
+# Manipulação e análise de dados
+pandas==2.2.3
+numpy==1.26.4
+
+# Visualização
+matplotlib==3.9.4
+seaborn==0.13.2
+
+# Machine Learning
+scikit-learn==1.5.2
+
+# Estatística (teste de Bartlett no PCA)
+scipy==1.13.1
+
+# ── Instalação ───────────────────────────────────────────────
+# pip install -r requirements.txt
+#
+# Versão do Python recomendada: 3.11+
+# ────────────────────────────────────────────────────────────
