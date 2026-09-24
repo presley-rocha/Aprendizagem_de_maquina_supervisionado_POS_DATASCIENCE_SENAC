@@ -1,6 +1,6 @@
 # Atualizações Recentes do Projeto
 
-**Data:** 20/09/2026  
+**Data:** 22/09/2026  
 **Responsável:** Clara Cecilia
 **Motivo da atualização:** Solicitação do professor e revisão geral do fluxo do projeto
 **obs**: esse arquivo deve ser atualizado com as edições mais recentes toda vez que houver uma nova modificação.
@@ -61,17 +61,17 @@ Foi realizada a análise de adequação do PCA (Análise de Componentes Principa
 
 ## 4. Status do Notebook 05.Modelagem_Avaliacao.ipynb
 
-**Status:** ⚠️ **Estruturado, mas ainda não executado.**
+**Status:** ✅ **Pronto para execução após atualização da base tratada.**
 
-O notebook `05.Modelagem_Avaliacao.ipynb` foi criado com a estrutura de código baseada no modelo do professor (CRISP-DM, funções bem definidas, separação treino/teste/validação, avaliação e salvamento do modelo). No entanto, **ele ainda não foi executado** pelos seguintes motivos:
+O notebook `05.Modelagem_Avaliacao.ipynb` foi criado com a estrutura de código baseada no modelo do professor (CRISP-DM, funções bem definidas, separação treino/teste/validação, avaliação e salvamento do modelo). A execução deve usar o CSV tratado atualizado após a análise visual do notebook `04.Visualizacao_dos_dados.ipynb`.
 
 ### Pendências antes da execução:
 
-Antes de rodar o modelo, é necessário realizar uma análise aprofundada das variáveis no notebook `04.Visualizacao_dos_dados.ipynb`. Essa análise deve incluir:
+As pendências abaixo foram verificadas e tratadas:
 
-1. **Análise visual das variáveis** — distribuições, histogramas, boxplots.
-2. **Identificação e remoção de outliers** — valores extremos que podem distorcer o treinamento.
-3. **Identificação e remoção de colunas desnecessárias** — variáveis com baixa variância, alta redundância ou que não agregam valor preditivo.
+1. **Análise visual das variáveis** — distribuições, histogramas e boxplots adicionados ao notebook 04.
+2. **Identificação e remoção de outliers** — removidas linhas com código sentinela `88888` e indicadores `IN_*` fora do domínio binário `0/1`.
+3. **Identificação e remoção de colunas desnecessárias** — removidas variáveis de baixa variância, alta redundância e identificadores/textos que não entram diretamente no modelo.
 
 ### Fluxo correto antes da execução do modelo:
 ```
@@ -91,7 +91,32 @@ Antes de rodar o modelo, é necessário realizar uma análise aprofundada das va
 ```
 
 
-**Importante:** as remoções de outliers e colunas devem ser feitas no notebook `02.Preparacao_dos_dados.ipynb`, para garantir que o CSV `dados_tratados.csv` seja atualizado com os dados já filtrados. Só então o notebook de modelagem pode ser executado com confiança.
+**Importante:** as remoções de outliers e colunas foram aplicadas no notebook `02.Preparacao_dos_dados.ipynb`, garantindo que o CSV `dados_tratados.csv` esteja atualizado com os dados já filtrados. O notebook 04 usa o snapshot `dados_tratados_pre_eda.csv` para manter a análise pré-limpeza reproduzível.
+
+### Resultado da limpeza aplicada
+
+| Item | Resultado |
+|---|---|
+| Shape pré-limpeza | 17.583 linhas × 227 colunas |
+| Linhas removidas por código `88888` | 1.326 |
+| Linhas removidas por `IN_*` fora de `0/1` | 332 |
+| Colunas removidas por baixa variância, redundância ou identificação | 38 |
+| Shape final de `dados_tratados.csv` | 15.925 linhas × 189 colunas |
+| Colunas não numéricas restantes | 0 |
+| NaN restantes | 0 |
+| Códigos `88888` restantes | 0 |
+
+### Ajuste adicional no notebook 05
+
+Durante a verificação pré-execução, foi identificado que a estratificação por faixas fixas do IDEB poderia gerar uma faixa com apenas 1 escola, causando erro no `train_test_split`. A divisão do notebook `05.Modelagem_Avaliacao.ipynb` foi ajustada para usar quantis (`pd.qcut`) como bins de estratificação.
+
+Com o CSV limpo, a separação foi validada sem treinar os modelos:
+
+| Conjunto | Registros | Features |
+|---|---:|---:|
+| Treino | 11.147 | 188 |
+| Teste | 2.389 | 188 |
+| Validação | 2.389 | 188 |
 
 ---
 
@@ -102,20 +127,17 @@ Antes de rodar o modelo, é necessário realizar uma análise aprofundada das va
 | Inclusão dos notebooks 03, 04 e 05 | ✅ Concluído |
 | Ajuste de caminhos universais no notebook 02 | ✅ Concluído |
 | Análise de adequação do PCA | ✅ Concluído — PCA não se aplica |
-| Análise profunda das variáveis (notebook 04) | ⏳ Pendente |
-| Remoção de outliers e colunas (notebook 02) | ⏳ Pendente |
-| Execução do notebook 05 (modelagem) | ⏳ Aguardando etapas anteriores |
+| Análise profunda das variáveis (notebook 04) | ✅ Concluído |
+| Remoção de outliers e colunas (notebook 02) | ✅ Concluído |
+| Execução do notebook 05 (modelagem) | ⏳ Pronto para execução |
 
 ---
 
 ## 6. Próximos Passos
 
-1. Executar o notebook `04.Visualizacao_dos_dados.ipynb` e analisar todas as variáveis.
-2. Identificar outliers e colunas irrelevantes.
-3. Voltar ao notebook `02.Preparacao_dos_dados.ipynb` e aplicar as remoções.
-4. Regenerar o arquivo `dados_tratados.csv` com os dados filtrados.
-5. Executar o notebook `05.Modelagem_Avaliacao.ipynb` para treinar e avaliar os modelos.
-6. Comparar os resultados e selecionar o melhor modelo.
+1. Executar o notebook `05.Modelagem_Avaliacao.ipynb` para treinar e avaliar os modelos.
+2. Comparar os resultados e selecionar o melhor modelo.
+3. Avaliar se ajustes de hiperparâmetros melhoram o desempenho do modelo selecionado.
 
 ---
 
