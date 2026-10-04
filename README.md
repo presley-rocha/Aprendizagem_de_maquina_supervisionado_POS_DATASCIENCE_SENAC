@@ -109,4 +109,23 @@ Nesse projeto trabalhamos com dois datasets compactados:
 ### 🚀 Fase 6: Implantação (*Deployment*)
 
 **Implantar em Produção:**
-* 🚧 *(Em construção)*
+* Desenvolvimento do protótipo `implementacao.py`, que consome os modelos treinados e permite consultar a previsão do IDEB a partir do código INEP de uma escola.
+* O script carrega dois modelos:
+  * **Regressão:** `Regressão/modelo_ideb.pkl` (scikit-learn / joblib), que prevê o valor contínuo do IDEB.
+  * **Classificação:** `Classificação/orange/GB_model.pkcls` (Orange), que prevê a faixa do IDEB (II, MI, MM ou MS).
+* Para cada escola consultada, o sistema exibe ao mesmo tempo o IDEB previsto, a faixa prevista, as probabilidades de cada faixa e uma comparação com o valor real presente na base.
+
+**Como executar:**
+
+O modelo de classificação é um arquivo `.pkcls` salvo pelo Orange, portanto é necessário ter o Orange instalado. A forma mais simples é usar o Python que já vem embutido no Orange.
+
+1. Instale o Orange (caso ainda não tenha):
+   ```powershell
+   winget install UniversityofLjubljana.Orange
+
+2. Na pasta do projeto, execute o script com o Python do Orange:
+
+  ```powershell
+  & "$env:LOCALAPPDATA\Programs\Orange\python.exe" implementacao.py
+
+3. Digite o código INEP (8 dígitos) de uma escola pública de ensino médio presente na base. Digite sair para encerrar.
