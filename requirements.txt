@@ -3,23 +3,49 @@
 # Previsão do IDEB com dados do Censo Escolar (INEP)
 # Pós-Graduação Data Science — SENAC DF
 # ============================================================
+#
+# Python: 3.12 (versão em que tudo abaixo foi instalado e testado)
+#
+# Este arquivo atende aos notebooks E ao sistema de previsão (app.py).
+#
+# Por que scikit-learn 1.5.2 e não uma versão mais nova?
+#   O classificador do Orange (GB_model.pkcls) foi salvo com o
+#   scikit-learn 1.5.2 e NÃO abre em versões mais novas (erro
+#   "No module named '_loss'"). Já o modelo de regressão
+#   (modelo_ideb.pkl) foi salvo com a 1.9.1, mas abre na 1.5.2 e
+#   produz exatamente as mesmas previsões (diferença 0.0 em 17.583
+#   escolas). Por isso a 1.5.2 é a única versão que atende aos dois.
+#
+# Se o modelo for retreinado, salve-o novamente com a versão do
+# ambiente e atualize estas linhas.
 
-# Manipulação e análise de dados
-pandas==2.2.3
-numpy==1.26.4
+# ── Dados ────────────────────────────────────────────────────
+pandas==2.3.3
+numpy==2.3.5
 
-# Visualização
-matplotlib==3.9.4
+# ── Modelos ──────────────────────────────────────────────────
+scikit-learn==1.5.2     # abre o modelo de regressão (modelo_ideb.pkl)
+joblib==1.6.0           # carrega o modelo de regressão (.pkl)
+
+# Orange3 NÃO é instalado via pip neste projeto.
+# O modelo de classificação (.pkcls) é carregado pelo Python
+# embutido no Orange. Veja o README, seção "Como executar".
+
+# ── Análise e visualização (notebooks) ───────────────────────
+scipy==1.18.1           # distribuição qui-quadrado do teste de Bartlett (notebook 03)
+matplotlib==3.11.2      # >= 3.9 é exigido por boxplot(tick_labels=...) no notebook 04
 seaborn==0.13.2
 
-# Machine Learning
-scikit-learn==1.5.2
+# ── Execução dos notebooks ───────────────────────────────────
+ipykernel
+jupyterlab
 
-# Estatística (teste de Bartlett no PCA)
-scipy==1.13.1
-
-# ── Instalação ───────────────────────────────────────────────
-# pip install -r requirements.txt
+# ── Instalação (notebooks) ───────────────────────────────────
+#   python -m venv .venv
+#   .venv\Scripts\activate            # Windows  (Linux/Mac: source .venv/bin/activate)
+#   pip install --upgrade pip
+#   pip install -r requirements.txt
 #
-# Versão do Python recomendada: 3.11+
-# ────────────────────────────────────────────────────────────
+# Executar o sistema de previsão:
+#   O implementacao.py usa o Python embutido do Orange.
+#   Veja o README, seção "Como executar".
